@@ -1,0 +1,78 @@
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+$primary-color: linen;
+
+$cursive-family: cursive;
+
+$content-height: 93vh;
+$footer-height: 7vh;
+$sidebar-height: 100vh;
+$sidebar-sub-height: $sidebar-height / 6;
+
+* {
+  margin: 0;
+  padding: 0;
+  /*border: 1px solid black;*/
+}
+
+body {
+  background-color: $primary-color;
+}
+
+#wrapper {
+  @include outer-container;
+
+  #sidebar-wrapper {
+    @include span-columns(2);
+    height: $sidebar-height;
+    box-shadow: 2px 2px 10px black;
+
+    #sidebar {
+      @include fill-parent();
+      @include row(table);
+
+      #sidebar-left, #sidebar-right {
+        @include span-columns(1 of 2);
+        @include pad();
+        padding: 0;
+
+        ul {
+          list-style: none;
+          text-align: center;
+
+          li {
+            height: $sidebar-sub-height;
+            box-shadow: 2px 2px 10px black;
+
+            .detailed-sign {
+              margin: $sidebar-sub-height * .1;
+              height: $sidebar-sub-height * .9;
+              width: $sidebar-sub-height * .9;
+            }
+            
+            p {
+              display: none;
+            }
+          }
+        }
+      }
+
+      #sidebar-right {
+        @include reset-display;
+      }
+    }
+  }
+
+  #content {
+    @include span-columns(10);
+    @include omega();
+    height: $content-height;
+  }
+
+  footer {
+    @include span-columns(10);
+    height: $footer-height;
+  }
+}
