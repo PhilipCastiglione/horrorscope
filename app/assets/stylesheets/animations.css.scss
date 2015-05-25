@@ -1,0 +1,64 @@
+/* ANIMATIONS */
+
+body {
+  @include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 10%, #EE74FF 35%, #DE64FF 65%, #BE44FD 90%, #8A0707 100%));
+}
+
+.horrify {
+  @include animation-duration(2s);
+  @include animation-name(horrify);
+}
+
+@include keyframes(horrify) {
+  from {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 0%, #EE74FF 30%, #DE64FF 70%, #BE44FD 100%, #8A0707 100%));}
+  2.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 0.250%, #EE74FF 30.125%, #DE64FF 69.875%, #BE44FD 99.750%, #8A0707 100%));}
+  5.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 0.500%, #EE74FF 30.250%, #DE64FF 69.750%, #BE44FD 99.500%, #8A0707 100%));}
+  7.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 0.750%, #EE74FF 30.375%, #DE64FF 69.625%, #BE44FD 99.250%, #8A0707 100%));}
+  10.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 1.000%, #EE74FF 30.500%, #DE64FF 69.500%, #BE44FD 99.000%, #8A0707 100%));}
+  12.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 1.250%, #EE74FF 30.625%, #DE64FF 69.375%, #BE44FD 98.750%, #8A0707 100%));}
+  15.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 1.500%, #EE74FF 30.750%, #DE64FF 69.250%, #BE44FD 98.500%, #8A0707 100%));}
+  17.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 1.750%, #EE74FF 30.875%, #DE64FF 69.125%, #BE44FD 98.250%, #8A0707 100%));}
+  20.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 2.000%, #EE74FF 31.000%, #DE64FF 69.000%, #BE44FD 98.000%, #8A0707 100%));}
+  22.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 2.250%, #EE74FF 31.125%, #DE64FF 68.875%, #BE44FD 97.750%, #8A0707 100%));}
+  25.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 2.500%, #EE74FF 31.250%, #DE64FF 68.750%, #BE44FD 97.500%, #8A0707 100%));}
+  27.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 2.750%, #EE74FF 31.375%, #DE64FF 68.625%, #BE44FD 97.250%, #8A0707 100%));}
+  30.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 3.000%, #EE74FF 31.500%, #DE64FF 68.500%, #BE44FD 97.000%, #8A0707 100%));}
+  32.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 3.250%, #EE74FF 31.625%, #DE64FF 68.375%, #BE44FD 96.750%, #8A0707 100%));}
+  35.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 3.500%, #EE74FF 31.750%, #DE64FF 68.250%, #BE44FD 96.500%, #8A0707 100%));}
+  37.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 3.750%, #EE74FF 31.875%, #DE64FF 68.125%, #BE44FD 96.250%, #8A0707 100%));}
+  40.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 4.000%, #EE74FF 32.000%, #DE64FF 68.000%, #BE44FD 96.000%, #8A0707 100%));}
+  42.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 4.250%, #EE74FF 32.125%, #DE64FF 67.875%, #BE44FD 95.750%, #8A0707 100%));}
+  45.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 4.500%, #EE74FF 32.250%, #DE64FF 67.750%, #BE44FD 95.500%, #8A0707 100%));}
+  47.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 4.750%, #EE74FF 32.375%, #DE64FF 67.625%, #BE44FD 95.250%, #8A0707 100%));}
+  50.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 5.000%, #EE74FF 32.500%, #DE64FF 67.500%, #BE44FD 95.000%, #8A0707 100%));}
+  52.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 5.250%, #EE74FF 32.625%, #DE64FF 67.375%, #BE44FD 94.750%, #8A0707 100%));}
+  55.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 5.500%, #EE74FF 32.750%, #DE64FF 67.250%, #BE44FD 94.500%, #8A0707 100%));}
+  57.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 5.750%, #EE74FF 32.875%, #DE64FF 67.125%, #BE44FD 94.250%, #8A0707 100%));}
+  60.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 6.000%, #EE74FF 33.000%, #DE64FF 67.000%, #BE44FD 94.000%, #8A0707 100%));}
+  62.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 6.250%, #EE74FF 33.125%, #DE64FF 66.875%, #BE44FD 93.750%, #8A0707 100%));}
+  65.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 6.500%, #EE74FF 33.250%, #DE64FF 66.750%, #BE44FD 93.500%, #8A0707 100%));}
+  67.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 6.750%, #EE74FF 33.375%, #DE64FF 66.625%, #BE44FD 93.250%, #8A0707 100%));}
+  70.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 7.000%, #EE74FF 33.500%, #DE64FF 66.500%, #BE44FD 93.000%, #8A0707 100%));}
+  72.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 7.250%, #EE74FF 33.625%, #DE64FF 66.375%, #BE44FD 92.750%, #8A0707 100%));}
+  75.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 7.500%, #EE74FF 33.750%, #DE64FF 66.250%, #BE44FD 92.500%, #8A0707 100%));}
+  77.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 7.750%, #EE74FF 33.875%, #DE64FF 66.125%, #BE44FD 92.250%, #8A0707 100%));}
+  80.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 8.000%, #EE74FF 34.000%, #DE64FF 66.000%, #BE44FD 92.000%, #8A0707 100%));}
+  82.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 8.250%, #EE74FF 34.125%, #DE64FF 65.875%, #BE44FD 91.750%, #8A0707 100%));}
+  85.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 8.500%, #EE74FF 34.250%, #DE64FF 65.750%, #BE44FD 91.500%, #8A0707 100%));}
+  87.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 8.750%, #EE74FF 34.375%, #DE64FF 65.625%, #BE44FD 91.250%, #8A0707 100%));}
+  90.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 9.000%, #EE74FF 34.500%, #DE64FF 65.500%, #BE44FD 91.000%, #8A0707 100%));}
+  92.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 9.250%, #EE74FF 34.625%, #DE64FF 65.375%, #BE44FD 90.750%, #8A0707 100%));}
+  95.000% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 9.500%, #EE74FF 34.750%, #DE64FF 65.250%, #BE44FD 90.500%, #8A0707 100%));}
+  97.500% {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 9.750%, #EE74FF 34.875%, #DE64FF 65.125%, #BE44FD 90.250%, #8A0707 100%));}
+  to {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 10%, #EE74FF 35%, #DE64FF 65%, #BE44FD 90%, #8A0707 100%));}
+}
+
+.fadein {
+  @include animation-duration(10s);
+  @include animation-name(fadein);
+}
+
+@include keyframes(fadein) {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
