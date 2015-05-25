@@ -2,15 +2,21 @@
 section#sidebar {
   display: inline-block;
   vertical-align: top;
-  width: 18vw;
+  width: 17vw;
   margin-left: 2vw;
   color: $font-color;
 
-  .poster {
+  .poster, .product {
     margin-top: 10vh;
+
+    img {
+      width: 17vw;
+    }
 
     p {
       text-align: center;
     }
   }
+
+
 }
