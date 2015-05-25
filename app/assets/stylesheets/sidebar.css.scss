@@ -1,0 +1,15 @@
+/* SIDEBAR */
+section#sidebar {
+  display: inline-block;
+  vertical-align: top;
+  width: 18vw;
+  margin-left: 2vw;
+
+  .poster {
+    margin-top: 10vh;
+
+    p {
+      text-align: center;
+    }
+  }
+}

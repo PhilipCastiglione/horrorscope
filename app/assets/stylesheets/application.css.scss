@@ -1,23 +1,17 @@
 @import "bourbon";
 
-$primary-color: linen;
-
-$cursive-family: cursive;
-
-$content-height: 93vh;
-$footer-height: 7vh;
-$sidebar-height: 100vh;
-$sidebar-sub-height: $sidebar-height / 6;
+$cursive: cursive;
+$primary-color: #BE44FD;
 
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid black;
 }
 
-body {
-  background-color: $primary-color;
-}
+@import "helpers";
+@import "nav";
+@import "main_content";
+@import "sidebar";
+@import "footer";
+@import "animations";
 
-#wrapper {
-}

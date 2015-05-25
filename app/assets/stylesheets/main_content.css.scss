@@ -1,0 +1,47 @@
+/* MAIN CONTENT */
+main#content {
+  display: inline-block;
+  vertical-align: top;
+  width: 56vw;
+  margin-left: 4vw;
+
+  h1 {
+    font-size: 9vh;
+    text-align: center;
+    margin: 2vh 0;
+    font-family: $cursive;
+  }
+  
+  h3 {
+    font-size: 6vh;
+    margin: 2vh 0;
+    font-family: $cursive;
+  }
+
+  h5 {
+    font-size: 4vh;
+    margin: 2vh 0;
+  }
+
+  p {
+    font-size: 3vh;
+    margin: 1vh 0;
+  }
+
+
+  .love {
+    .heart {
+      margin: 1vh 0;
+      margin-left: -4vw;
+      max-width: 19vw;
+    }
+
+    .right {
+      max-width: 40vw;
+    }
+  }
+
+  .money {
+    clear: both;
+  }
+}
