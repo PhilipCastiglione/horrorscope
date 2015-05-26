@@ -1,6 +1,6 @@
 require_relative 'CopyLib'
 
-class HorrorScope
+class Horrorscope < ActiveRecord::Base
   include CopyLib
 
   attr_accessor :theme, :general, :love, :money
