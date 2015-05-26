@@ -24,7 +24,7 @@ module CopyLib
             ["Your natural charm will be enhanced by all the good vibes, look out world!", 'charm']
           ],
           bad: [
-            ["This will have a dark impact on your emotional state and send you into a stubborn mood fit for a true Aries. It is up to you to decide how to deal with this. I'm not your mum, I can't tell you what to do.", 'mood'],
+            ["This will have a dark impact on your emotional state and send you into a stubborn mood fit for a true #{@zodiac}. It is up to you to decide how to deal with this. I'm not your mum, I can't tell you what to do.", 'mood'],
             ["Ordinarily, you might rely on your charmisma and winning personality to get you through any tough situations you encounter.", "charm"]
           ]
         },

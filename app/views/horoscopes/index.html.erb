@@ -23,22 +23,22 @@
 <main id="content">
   <h1>HorrorScope</h1>
   <section>
-    <h3><%= image_tag("zodiac_signs/simple/Aries.svg", 'class'=> "header-sign") %> Aries</h3>
+    <h3><%= image_tag("zodiac_signs/simple/#{@horoscope.zodiac}.svg", 'class'=> "header-sign") %> <%= @horoscope.zodiac %></h3>
     <article>
-      <p>It will be an interesting day for you, breaking the mould of the last few dreary weeks of your boring life. It's possible this results from the impact of saturn's diurnal orb moving into jupiter's sphere of influence. No promises though.</p>
-      <p>This will have a dark impact on your emotional state and send you into a stubborn mood fit for a true Aries. It is up to you to decide how to deal with this. I'm not your mum, I can't tell you what to do.</p>
-      <p>By the end of the day your mood will become secondary to the hell unleashed on earth as the dead rise from their graves and slaughter the innocent in their beds. The living dead will enter your home and rip your family to shreds, before feeding on their flesh. Try learning self defence, or write a letter to a loved one you haven't spoken to for a while.</p>
+      <p><%= @horoscope.general1%></p>
+      <p><%= @horoscope.general2%></p>
+      <p><%= @horoscope.general3%></p>
     </article>
     <article class="love">
       <%= image_tag("heart.png", 'class'=> "heart left") %>
       <div class="right">
         <h5>Love</h5>
-        <p>A promising enounter with a mysterious stranger will bring some excitement. The medical-grade prescription strength deoderant you recently purchased is probably paying off here. The nervous buzz and tingling stomach you feel when talking to your new admirer will be quickly replaced with overwhelming terror and an empty stomach as you see their freshly disemboweled corpse rotting on the side of the road.</p>
+        <p><%= @horoscope.love%></p>
       </div>
     </article>
     <article class="money">
       <h5>Money</h5>
-      <p>Your investment in wearable technologies will tank as news surfaces of the latest iBriefs delivering high voltage shocks when it rains. Luckily for you, the money wouldn't have been useful anyway since the undead hordes prefer a barter-based economy. Also they ate all the bankers. Silver lining?</p>
+      <p><%= @horoscope.money%></p>
     </article>
   </section>
 </main>
