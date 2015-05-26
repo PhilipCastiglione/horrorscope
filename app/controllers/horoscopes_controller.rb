@@ -2,7 +2,8 @@ class HoroscopesController < ApplicationController
 
   def index
     # first time visitor stuff or default
-    @horoscope = Horoscope.new('Aries')
+    @horoscope = Horoscope.new
+    @horoscope.generate('Aries')
   end
 
   def Aries

@@ -2,23 +2,21 @@ module CopyLib
 
   def getNouns
     {
-      Zombies: [['zombies'],[]],
-      Werewolves: [['werewolves','lycanthropes'],[]],
-      Vampires: [['vampires','the nosferatu'],[]],
-      Demons: [['demons'],[]],
-      Witches: [['witches'],[]],
-      Aliens: [['aliens'],[]],
-      Poltergeist: [['poltergeist','ghost'],[]],
-      Shades: [['shades','spirits'],[]],
-      Undead: [['undead', 'living dead'],[
-          "By the end of the day your #{@characteristic} will become secondary to the hell unleashed on earth as the dead rise from their graves and slaughter the innocent in their beds. The living dead will enter your home and rip your family to shreds, before feeding on their flesh."
-          ]],
-      Monsters: [['monsters'],[]],
-      SerialKiller: [['serial killer','murderer'],[]],
-      Parasite: [['parasite'],[]],
-      Plague: [['plague'],[]],
-      Torturer: [['the torturer','the psychopath'],[]],
-      Insects: [['giant spiders','swarm of locusts'],[]]
+      Zombies: ['zombies', 'walkers'],
+      Werewolves: ['werewolves','lycanthropes','lupines'],
+      Vampires: ['vampires','the nosferatu'],
+      Demons: ['demons','demonspawn','imps','hell-beasts'],
+      Witches: ['witches', 'evil hags', 'coven'],
+      Aliens: ['aliens'],
+      Poltergeist: ['poltergeist','ghost'],
+      Shades: ['shades','spirits'],
+      Undead: ['undead', 'living dead', 'skeletons'],
+      Monsters: ['monsters'],
+      SerialKiller: ['serial killer','murderer'],
+      Parasite: ['parasites'],
+      Plague: ['plaguebringers','pestilent ones'],
+      Torturer: ['the torturer','the psychopath'],
+      Insects: ['giant spiders','swarm of locusts']
     }
   end
 
@@ -28,7 +26,8 @@ module CopyLib
         intro: [
           "It will be an interesting day for you, breaking the mould of the last few dreary weeks of your boring life.",
           "You might regret forgetting your lucky coin this morning.",
-          "You will soon forget the tragic loss of your naval fluff collection last week."
+          "You will soon forget the tragic loss of your naval fluff collection last week.",
+          "Your insatiable appetite for custard will finally cease to harm those around you"
         ],  
         astral: {
           good: [
@@ -51,23 +50,33 @@ module CopyLib
           ]
         },
         horror: {
-          Zombies: [],
-          Werewolves: [],
-          Vampires: [],
-          Demons: [],
-          Witches: [],
-          Aliens: [],
-          Poltergeist: [],
-          Shades: [],
+          Zombies: [
+            "No one will care much for your #{@characteristic} by the end of the day as brain-eating zombies sweep through the city, killing everyone in sight. The highly infectious flesh-eaters will eat or turn anyone in their way, turning your once beautiful home into a desolate wasteland."
+            ],
+          Werewolves: [
+            "Unfortunately your #{@characteristic} doesn't come with magical dog-training abilities. This might have come in handy as the most recent full moon saw an outbreak of lycanthropy, and werewolves have been breeding rapidly in the forest. Today they will descend upon humanity and wreak a terrible revenge on dog-owners and other humans alike for not letting Fido eat that delicious steak off the table."
+            ],
+          Vampires: [
+            "The previous days curious swarm of bats passing overhead will turn out to be an omen for the coming of a great evil. In the depths of darkness tonight, bloodsucking vampires will slink through the night and prey upon the innocent, leaving dry husks in their wake. Your #{@characteristic} will do little to discourage a nasty vampire from making a meal of you."
+            ],
+          Demons: [
+            "As you're on your way home later on tonight after purchasing a particularly promising batch of petunia seedlings, your delight will turn to horror as a portal to the netherworld opens up at your feet. Hell-beasts will burst from the earth and set the world alight - not in a Katy Perry kind of way. Demons will capture your loved ones and torture them for sport, before devouring their souls."
+            ],
+          Witches: [
+            "You probably should have cleaned up the inconsipicuous pile of sticks you found at your doorstep yesterday. Turns out a coven of witches decided to use your family as human sacrifices for their nefarious magic. The binding spell will complete and you will be unable to escape or do anything other than watch as your home burns to ashes around you."
+            ],
+          Aliens: ["Aliens."],
+          Poltergeist: ["Poltergeist."],
+          Shades: ["Shades."],
           Undead: [
-              "By the end of the day your #{@characteristic} will become secondary to the hell unleashed on earth as the dead rise from their graves and slaughter the innocent in their beds. The living dead will enter your home and rip your family to shreds, before feeding on their flesh."
-              ],
-          Monsters: [],
-          SerialKiller: [],
-          Parasite: [],
-          Plague: [],
-          Torturer: [],
-          Insects: []
+            "By the end of the day your #{@characteristic} will become secondary to the hell unleashed on earth as the dead rise from their graves and slaughter the innocent in their beds. The living dead will enter your home and rip your family to shreds, before feeding on their flesh."
+            ],
+          Monsters: ["Monsters."],
+          SerialKiller: ["SerialKiller."],
+          Parasite: ["Parasite."],
+          Plague: ["Plague."],
+          Torturer: ["Torturer."],
+          Insects: ["Insects."]
         },
         nonseq: [
           " Try learning self defence, or write a letter to a loved one you haven't spoken to for a while.",
@@ -96,7 +105,7 @@ module CopyLib
             " The nervous buzz and tingling stomach you feel when talking to your new admirer will be quickly replaced with overwhelming terror and an empty stomach as you see their freshly disemboweled corpse rotting on the side of the road."
           ],
           bad: [
-            " On the plus side your love life won't be your biggest problem once the horde of #{JSON.parse(@nouns).sample} rampage through town leaving everyone you've ever met just a distant memory."
+            " On the plus side your love life won't be your biggest problem once the horde of #{JSON.parse(@nouns||"[]").sample} rampage through town leaving everyone you've ever met just a distant memory."
           ]
         },
       },
@@ -105,10 +114,10 @@ module CopyLib
           "Your investment in wearable technologies will tank as news surfaces of the latest iBriefs delivering high voltage shocks when it rains."
         ],
         horror: [
-          " Luckily for you, the money wouldn't have been useful anyway since the #{JSON.parse(@nouns).sample} prefer a barter-based economy."
+          " Luckily for you, the money wouldn't have been useful anyway since the #{JSON.parse(@nouns||"[]").sample} prefer a barter-based economy."
         ],
         comment: [
-          " Also they ate all the bankers. Silver lining?"
+          " Also they killed all the bankers. Silver lining?"
         ]
       }
     }

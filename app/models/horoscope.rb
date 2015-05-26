@@ -3,38 +3,42 @@ class Horoscope < ActiveRecord::Base
 
   include CopyLib
 
-  def initialize(zodiac)
-    @zodiac = zodiac
-    # @theme = getCopy[:general][:horror].keys.sample
-    @theme = :Undead #hardcode for limited copy
-    @nouns = getNouns[@theme].first.to_json
-    @mood = (rand(2) == 0)? :good : :bad
-    @characteristic = ""
-    @general1 = ""
-    @general2 = ""
-    @general3 = ""
-    @love = ""
-    @money = ""
+  # def initialize(zodiac)
+  #   @zodiac = zodiac
+  #   @theme = getNouns.keys.sample
+  #   @nouns = getNouns[@theme].to_json
+  #   @mood = (rand(2) == 0)? :good : :bad
+  #   @characteristic = ""
+  #   @general1 = ""
+  #   @general2 = ""
+  #   @general3 = ""
+  #   @love = ""
+  #   @money = ""
 
-    self.generate
-  end
+  #   self.generate
+  # end
 
-  def generate
-    @general1 += getCopy[:general][:intro].sample
-    @general1 += getCopy[:general][:astral][@mood].sample
-    sign = getCopy[:general][:sign][@mood].sample
-    @characteristic += sign.last
-    @general2 += sign.first
-    @general3 += getCopy[:general][:horror][@theme].sample
-    @general3 += getCopy[:general][:nonseq].sample
+  def generate(zodiac)
+    self.zodiac = zodiac
+    self.theme = getNouns.keys.sample
 
-    @love += getCopy[:love][:intro][@mood].sample
-    @love += getCopy[:love][:comment][@mood].sample
-    @love += getCopy[:love][:horror][@mood].sample
+    self.nouns = getNouns[self.theme].to_json
+    thing = (rand(2) == 0)? :good : :bad
+    self.mood = thing
 
-    @money += getCopy[:money][:intro].sample
-    @money += getCopy[:money][:comment].sample
-    @money += getCopy[:money][:horror].sample
+    self.general1 = getCopy[:general][:intro].sample + getCopy[:general][:astral][self.mood].sample
+    sign = getCopy[:general][:sign][self.mood].sample
+    self.characteristic = sign.last
+    self.general2 = sign.first
+    self.general3 = getCopy[:general][:horror][self.theme].sample + getCopy[:general][:nonseq].sample
+
+    self.love += getCopy[:love][:intro][self.mood].sample
+    self.love += getCopy[:love][:comment][self.mood].sample
+    self.love += getCopy[:love][:horror][self.mood].sample
+
+    self.money += getCopy[:money][:intro].sample
+    self.money += getCopy[:money][:comment].sample
+    self.money += getCopy[:money][:horror].sample
   end
 
 end
