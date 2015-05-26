@@ -7,8 +7,7 @@ class Horoscope < ActiveRecord::Base
     @zodiac = zodiac
     # @theme = getCopy[:general][:horror].keys.sample
     @theme = :Undead #hardcode for limited copy
-    @nouns = getCopy[:general][:horror][@theme].first
-    puts @nouns
+    @nouns = getNouns[@theme].first.to_json
     @mood = (rand(2) == 0)? :good : :bad
     @characteristic = ""
     @general1 = ""
@@ -26,7 +25,7 @@ class Horoscope < ActiveRecord::Base
     sign = getCopy[:general][:sign][@mood].sample
     @characteristic += sign.last
     @general2 += sign.first
-    @general3 += getCopy[:general][:horror][@theme].last.sample
+    @general3 += getCopy[:general][:horror][@theme].sample
     @general3 += getCopy[:general][:nonseq].sample
 
     @love += getCopy[:love][:intro][@mood].sample

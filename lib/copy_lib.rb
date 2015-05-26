@@ -1,5 +1,27 @@
 module CopyLib
 
+  def getNouns
+    {
+      Zombies: [['zombies'],[]],
+      Werewolves: [['werewolves','lycanthropes'],[]],
+      Vampires: [['vampires','the nosferatu'],[]],
+      Demons: [['demons'],[]],
+      Witches: [['witches'],[]],
+      Aliens: [['aliens'],[]],
+      Poltergeist: [['poltergeist','ghost'],[]],
+      Shades: [['shades','spirits'],[]],
+      Undead: [['undead', 'living dead'],[
+          "By the end of the day your #{@characteristic} will become secondary to the hell unleashed on earth as the dead rise from their graves and slaughter the innocent in their beds. The living dead will enter your home and rip your family to shreds, before feeding on their flesh."
+          ]],
+      Monsters: [['monsters'],[]],
+      SerialKiller: [['serial killer','murderer'],[]],
+      Parasite: [['parasite'],[]],
+      Plague: [['plague'],[]],
+      Torturer: [['the torturer','the psychopath'],[]],
+      Insects: [['giant spiders','swarm of locusts'],[]]
+    }
+  end
+
   def getCopy
     {
       general: {
@@ -29,23 +51,23 @@ module CopyLib
           ]
         },
         horror: {
-          Zombies: [['zombies'],[]],
-          Werewolves: [['werewolves','lycanthropes'],[]],
-          Vampires: [['vampires','the nosferatu'],[]],
-          Demons: [['demons'],[]],
-          Witches: [['witches'],[]],
-          Aliens: [['aliens'],[]],
-          Poltergeist: [['poltergeist','ghost'],[]],
-          Shades: [['shades','spirits'],[]],
-          Undead: [['undead', 'living dead'],[
+          Zombies: [],
+          Werewolves: [],
+          Vampires: [],
+          Demons: [],
+          Witches: [],
+          Aliens: [],
+          Poltergeist: [],
+          Shades: [],
+          Undead: [
               "By the end of the day your #{@characteristic} will become secondary to the hell unleashed on earth as the dead rise from their graves and slaughter the innocent in their beds. The living dead will enter your home and rip your family to shreds, before feeding on their flesh."
-              ]],
-          Monsters: [['monsters'],[]],
-          SerialKiller: [['serial killer','murderer'],[]],
-          Parasite: [['parasite'],[]],
-          Plague: [['plague'],[]],
-          Torturer: [['the torturer','the psychopath'],[]],
-          Insects: [['giant spiders','swarm of locusts'],[]]
+              ],
+          Monsters: [],
+          SerialKiller: [],
+          Parasite: [],
+          Plague: [],
+          Torturer: [],
+          Insects: []
         },
         nonseq: [
           " Try learning self defence, or write a letter to a loved one you haven't spoken to for a while.",
@@ -74,7 +96,7 @@ module CopyLib
             " The nervous buzz and tingling stomach you feel when talking to your new admirer will be quickly replaced with overwhelming terror and an empty stomach as you see their freshly disemboweled corpse rotting on the side of the road."
           ],
           bad: [
-            " On the plus side your love life won't be your biggest problem once the horde of #{(@nouns||[]).sample} rampage through town leaving everyone you've ever met just a distant memory."
+            " On the plus side your love life won't be your biggest problem once the horde of #{JSON.parse(@nouns).sample} rampage through town leaving everyone you've ever met just a distant memory."
           ]
         },
       },
@@ -83,7 +105,7 @@ module CopyLib
           "Your investment in wearable technologies will tank as news surfaces of the latest iBriefs delivering high voltage shocks when it rains."
         ],
         horror: [
-          " Luckily for you, the money wouldn't have been useful anyway since the #{(@nouns||[]).sample} prefer a barter-based economy."
+          " Luckily for you, the money wouldn't have been useful anyway since the #{JSON.parse(@nouns).sample} prefer a barter-based economy."
         ],
         comment: [
           " Also they ate all the bankers. Silver lining?"

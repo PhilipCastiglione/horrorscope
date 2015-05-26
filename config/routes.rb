@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get  '/horrorscopes/Sagittarius' => 'horoscopes#Sagittarius'
   get  '/horrorscopes/Capricorn' => 'horoscopes#Capricorn'
   get  '/horrorscopes/Aquarius' => 'horoscopes#Aquarius'
-  get  '/horrorscopes/Pisces' => 'horoscopes#Pise'
+  get  '/horrorscopes/Pisces' => 'horoscopes#Pisces'
 
 end

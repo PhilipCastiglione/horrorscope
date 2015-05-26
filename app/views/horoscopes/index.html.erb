@@ -1,22 +1,22 @@
 <nav>
   <menu class="left">
     <ul>
-      <li><%= image_tag("zodiac_signs/detailed/Aries.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Taurus.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Gemini.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Cancer.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Leo.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Virgo.svg") %></li>
+      <li><a href="/horrorscopes/Aries"><%= image_tag("zodiac_signs/detailed/Aries.svg") %></a></li>
+      <li><a href="/horrorscopes/Taurus"><%= image_tag("zodiac_signs/detailed/Taurus.svg") %></a></li>
+      <li><a href="/horrorscopes/Gemini"><%= image_tag("zodiac_signs/detailed/Gemini.svg") %></a></li>
+      <li><a href="/horrorscopes/Cancer"><%= image_tag("zodiac_signs/detailed/Cancer.svg") %></a></li>
+      <li><a href="/horrorscopes/Leo"><%= image_tag("zodiac_signs/detailed/Leo.svg") %></a></li>
+      <li><a href="/horrorscopes/Virgo"><%= image_tag("zodiac_signs/detailed/Virgo.svg") %></a></li>
     </ul>
   </menu>
   <menu class="right">
     <ul>
-      <li><%= image_tag("zodiac_signs/detailed/Libra.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Scorpio.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Sagittarius.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Capricorn.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Aquarius.svg") %></li>
-      <li><%= image_tag("zodiac_signs/detailed/Pisces.svg") %></li>
+      <li><a href="/horrorscopes/Libra"><%= image_tag("zodiac_signs/detailed/Libra.svg") %></a></li>
+      <li><a href="/horrorscopes/Scorpio"><%= image_tag("zodiac_signs/detailed/Scorpio.svg") %></a></li>
+      <li><a href="/horrorscopes/Sagittarius"><%= image_tag("zodiac_signs/detailed/Sagittarius.svg") %></a></li>
+      <li><a href="/horrorscopes/Capricorn"><%= image_tag("zodiac_signs/detailed/Capricorn.svg") %></a></li>
+      <li><a href="/horrorscopes/Aquarius"><%= image_tag("zodiac_signs/detailed/Aquarius.svg") %></a></li>
+      <li><a href="/horrorscopes/Pisces"><%= image_tag("zodiac_signs/detailed/Pisces.svg") %></a></li>
     </ul>
   </menu>
 </nav>
@@ -45,7 +45,7 @@
 <section id='sidebar'>
   <div class="poster">
     <a href="http://www.imdb.com/title/tt0339840/"><%= image_tag("http://ia.media-imdb.com/images/M/MV5BOTIyMjAyOTc1M15BMl5BanBnXkFtZTcwMjMxNTMzMQ@@._V1_SY317_CR5,0,214,317_AL_.jpg") %></a>
-    <p>See the undead in action</p>
+    <p>See the <%= JSON.parse(@horoscope.nouns).sample %> in action</p>
   </div>
   <div class="product">
     <%= image_tag("http://cdn3.nerdapproved.com/wp-content/uploads/2008/06/ancestor-table.jpg?bbba63") %>
@@ -54,5 +54,5 @@
 </section>
 <footer>
   &copy; Copyright Philip Castiglione 2015.<br>
-  Thieves handed over to the undead. It won't be pretty.
+  Thieves handed over to the <%= JSON.parse(@horoscope.nouns).sample %>. It won't be pretty.
 </footer>
