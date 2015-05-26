@@ -1,15 +1,17 @@
-require_relative 'HorrorThemes'
 require_relative 'CopyLib'
 
 class HorrorScope
-  include HorrorThemes
   include CopyLib
 
   attr_accessor :theme, :general, :love, :money
 
   def initialize()
-    # @theme = getThemes.sample.to_sym
+    # @theme = getCopy[:general][:horror].keys.sample
     @theme = :Undead
+    @nouns = getCopy[:general][:horror][@theme].first
+    puts @nouns
+    @mood = (rand(2) == 0)? :good : :bad
+    @characteristic = ""
     @general1 = ""
     @general2 = ""
     @general3 = ""
@@ -21,13 +23,16 @@ class HorrorScope
 
   def generate
     @general1 += getCopy[:general][:intro].sample
-    @general1 += getCopy[:general][:chance].sample
-    @general2 += getCopy[:general][:sign].sample
+    @general1 += getCopy[:general][:astral][@mood].sample
+    sign = getCopy[:general][:sign][@mood].sample
+    @characteristic += sign.last
+    @general2 += sign.first
     @general3 += getCopy[:general][:horror][@theme].last.sample
+    @general3 += getCopy[:general][:nonseq].sample
 
-    @love += getCopy[:love][:intro].sample
-    @love += getCopy[:love][:comment].sample
-    @love += getCopy[:love][:horror].sample
+    @love += getCopy[:love][:intro][@mood].sample
+    @love += getCopy[:love][:comment][@mood].sample
+    @love += getCopy[:love][:horror][@mood].sample
 
     @money += getCopy[:money][:intro].sample
     @money += getCopy[:money][:comment].sample
