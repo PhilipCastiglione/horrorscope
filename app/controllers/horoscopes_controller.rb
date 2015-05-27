@@ -3,7 +3,7 @@ include Generator
 class HoroscopesController < ApplicationController
 
   def index
-    generateHoroscopes if !Horoscope.all
+    generateHoroscopes if Horoscope.all.empty?
     @horoscope = Horoscope.find_by zodiac:'Aries'
   end
 

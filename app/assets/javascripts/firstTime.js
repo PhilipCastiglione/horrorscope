@@ -24,11 +24,11 @@ $(window).load(function(){
     localStorage.setItem('defaultZodiac', serialZodiac);
   };
 
-  var pushEmail = function(email) {
+  var pushEmail = function(address) {
     $.ajax({
-      url: '', //PLACEHOLDER
+      url: '/emails/add',
       method: 'POST',
-      data: JSON.stringify(email),
+      data: {email: address},
       dataType: 'json'
     })
   };

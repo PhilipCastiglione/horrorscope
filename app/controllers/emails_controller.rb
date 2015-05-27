@@ -1,7 +1,9 @@
 class EmailsController < ApplicationController
 
   def add
-    puts 'stuff'
+    e = Email.new()
+    e.address = params['email']
+    e.save
   end
 
 end

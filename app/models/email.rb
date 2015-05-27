@@ -1,5 +1,5 @@
 class Email < ActiveRecord::Base
 
-  validates :email, uniqueness: true
+  validates :address, uniqueness: true
 
 end
