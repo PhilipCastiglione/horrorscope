@@ -3,7 +3,6 @@ include Generator
 class HoroscopesController < ApplicationController
 
   def index
-    # first time visitor stuff or default
     generateHoroscopes if !Horoscope.all
     @horoscope = Horoscope.find_by zodiac:'Aries'
   end
