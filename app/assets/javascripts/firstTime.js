@@ -1,99 +1,36 @@
 $(window).load(function(){
 
-
   var setDefaultZodiac = function(days, months) {
-    
-// # class Aries < Horrorscope
-// #   @dates = {
-// #     lower: [21,3],
-// #     upper: [20,4]
-// #   }
-// # end
+    // convert date to serial
+    var serial = +months + days / 100;
+    var serialZodiac = '';
+    // assign zodiac sign based on serial date
+    if (serial < 1.20) {serialZodiac = 'Capricorn';
+    } else if (serial < 2.20) {serialZodiac = 'Aquarius';
+    } else if (serial < 3.21) {serialZodiac = 'Pisces';
+    } else if (serial < 4.21) {serialZodiac = 'Aries';
+    } else if (serial < 5.22) {serialZodiac = 'Taurus';
+    } else if (serial < 6.23) {serialZodiac = 'Gemini';
+    } else if (serial < 7.23) {serialZodiac = 'Cancer';
+    } else if (serial < 8.22) {serialZodiac = 'Leo';
+    } else if (serial < 9.24) {serialZodiac = 'Virgo';
+    } else if (serial < 10.24) {serialZodiac = 'Libra';
+    } else if (serial < 11.23) {serialZodiac = 'Scorpio';
+    } else if (serial < 12.23) {serialZodiac = 'Sagittarius';
+    } else if (serial < 12.32) {serialZodiac = 'Capricorn';
+    } else {serialZodiac = 'date error in setDefaultZodiac';
+    }
 
-// # class Taurus < Horrorscope
-// #   @dates = {
-// #     lower: [21,4],
-// #     upper: [21,5]
-// #   }
-// # end
-
-// # class Gemini < Horrorscope
-// #   @dates = {
-// #     lower: [22,5],
-// #     upper: [22,6]
-// #   }
-// # end
-
-// # class Cancer < Horrorscope
-// #   @dates = {
-// #     lower: [23,6],
-// #     upper: [22,7]
-// #   }
-// # end
-
-// # class Leo < Horrorscope
-// #   @dates = {
-// #     lower: [23,7],
-// #     upper: [21,8]
-// #   }
-// # end
-
-// # class Virgo < Horrorscope
-// #   @dates = {
-// #     lower: [22,8],
-// #     upper: [23,9]
-// #   }
-// # end
-
-// # class Libra < Horrorscope
-// #   @dates = {
-// #     lower: [24,9],
-// #     upper: [23,10]
-// #   }
-// # end
-
-// # class Scorpio < Horrorscope
-// #   @dates = {
-// #     lower: [24,10],
-// #     upper: [22,11]
-// #   }
-// # end
-
-// # class Sagittarius < Horrorscope
-// #   @dates = {
-// #     lower: [23,11],
-// #     upper: [22,12]
-// #   }
-// # end
-
-// # class Capricorn < Horrorscope
-// #   @dates = {
-// #     lower: [23,12],
-// #     upper: [20,1]
-// #   }
-// # end
-
-// # class Aquarius < Horrorscope
-// #   @dates = {
-// #     lower: [21,1],
-// #     upper: [19,2]
-// #   }
-// # end
-
-// # class Pisces < Horrorscope
-// #   @dates = {
-// #     lower: [20,2],
-// #     upper: [20,3]
-// #   }
-// # end
-
-
-
-    // localStorage.setItem('defaultZodiac', zodiac);
+    localStorage.setItem('defaultZodiac', serialZodiac);
   };
 
   var pushEmail = function(email) {
-    // put email in db with ajax (need to write API etc)
+    $.ajax({
+      url: '', //PLACEHOLDER
+      method: 'POST',
+      data: JSON.stringify(email),
+      dataType: 'json'
+    })
   };
 
   var toggleFirstTime = function() {
@@ -103,30 +40,45 @@ $(window).load(function(){
   var submitFirstTime = function() {
     var days = $('#first-time-days').val();
     var months = $('#first-time-months').val();
+    var name = $('#first-time-name').val();
     var email = $('#first-time-email').val();
+    // if date values expected (not handling 31st Feb edge cases because yolo)
     if (days >= 1 && days <= 31 && months >= 1 && months <= 12) {
       setDefaultZodiac(days, months);
     }
-    if (email) {
+    // add name if given
+    if (name) {
+      localStorage.setItem('name', name);
+    }
+    // if it looks and smells like an email address
+    if (email.match(/@/)) {
       pushEmail(email);
+    }
+    // on submit, send us to the default sign if present
+    if (localStorage.getItem('defaultZodiac')) {
+      window.location.href = '/horrorscopes/' + localStorage.getItem('defaultZodiac');
     }
   };
 
+  // attach event listeners
   $('#skip-first-time').on('click', toggleFirstTime);
   $('#submit-first-time').on('click', submitFirstTime);
 
+  // check if first time visitor
   if (!localStorage.getItem('visitCount')) {
+    // set default default...
     localStorage.setItem('defaultZodiac', 'Aries');
     toggleFirstTime();
     localStorage.setItem('visitCount', '1')
   } else {
+    // if we are on the splash page and there is a default, go there
+    if (window.location.href === "http://localhost:3000/" &&
+        localStorage.getItem('defaultZodiac')) {
+      window.location.href = '/horrorscopes/' + localStorage.getItem('defaultZodiac');
+    }
+    // update the visit count
     var count = parseInt(localStorage.getItem('visitCount'), 10);
-    //do this only on the splash page
-    window.location.href = '/horrorscopes/' + localStorage.getItem('defaultZodiac');
     localStorage.setItem('visitCount', ++count);
   }
 
 });
-
-
-// style modal

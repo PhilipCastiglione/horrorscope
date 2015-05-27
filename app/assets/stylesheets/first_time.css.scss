@@ -1,0 +1,57 @@
+#first-time {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  overflow: hidden;
+  line-height: 100vh;
+  background-color: rgba(0,0,0,.7);
+  text-align: center;
+  z-index: 10;
+
+  .inner {
+    display: inline-block;
+    vertical-align: middle;
+    height: 42vh;
+    width: 40vw;
+    padding: 5vh 3vw;
+    background-color: white;
+    border-radius: 10%;
+
+    h1 {
+      font-size: 10vh;
+      line-height: 10vh;
+      margin-bottom: 1vh;
+    }
+
+    p {
+      line-height: 5vh;
+      font-size: 4vh;
+
+      #first-time-name, #first-time-email {
+        height: 5vh;
+        width: 30vw;
+        margin: 1vh 0;
+        padding: .5vh .5vw;
+        font-size: 3vh;
+      }
+
+      #first-time-days, #first-time-months {
+        height: 5vh;
+        width: 8vw;
+        margin: 1vh 0;
+        padding: .5vh .5vw;
+        font-size: 4vh;
+      }
+
+      button {
+        height: 6vh;
+        line-height: 4vh;
+        width: 12vw;
+        padding: .5vh .5vw;
+        font-size: 3vh;
+        background: none;
+        border-radius: 3vw;
+      }
+    }
+  }
+}
