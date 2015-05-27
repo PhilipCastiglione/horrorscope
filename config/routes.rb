@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   get '/apis/movies/search'       => 'apis#movies_search'
   get '/apis/movies/title'        => 'apis#movies_title'
 
+  post '/emails/add'              => 'emails#add'
+
 
 end
