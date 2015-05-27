@@ -24,11 +24,11 @@ $(window).load(function(){
     localStorage.setItem('defaultZodiac', serialZodiac);
   };
 
-  var pushEmail = function(address) {
+  var pushEmail = function(address, sign) {
     $.ajax({
       url: '/emails/add',
       method: 'POST',
-      data: {email: address},
+      data: {email: address, zodiac: sign},
       dataType: 'json'
     })
   };
@@ -52,12 +52,10 @@ $(window).load(function(){
     }
     // if it looks and smells like an email address
     if (email.match(/@/)) {
-      pushEmail(email);
+      pushEmail(email, localStorage.getItem('defaultZodiac'));
     }
-    // on submit, send us to the default sign if present
-    if (localStorage.getItem('defaultZodiac')) {
-      window.location.href = '/horrorscopes/' + localStorage.getItem('defaultZodiac');
-    }
+    // on submit, send us to the default sign
+    window.location.href = '/horrorscopes/' + localStorage.getItem('defaultZodiac');
   };
 
   // attach event listeners
