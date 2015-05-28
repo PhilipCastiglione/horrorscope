@@ -22,10 +22,15 @@ class MoviesController < ApplicationController
       @omdb_data = HTTParty.get(URI.escape(url))
 
       new_movie = Movie.new
+      
       new_movie.title = cleaned_title
       new_movie.theme = params[:theme]
       new_movie.imdb = "http://www.imdb.com/title/#{@omdb_data['imdbID']}"
       new_movie.poster = @omdb_data["Poster"]
+      
+      if @omdb_data["Poster"] = "N/A"
+        render :json => "No poster".to_json
+      end
 
       unless @omdb_data["Response"] != "False" && new_movie.save
         # throw error
@@ -33,8 +38,9 @@ class MoviesController < ApplicationController
       end
 
       movie = Movie.where(:title => cleaned_title)
+      render :json => movie.to_json
     end
-    render :json => movie.to_json
+    render :json => "Already have it".to_json
   end
 
 end

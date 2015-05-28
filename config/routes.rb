@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/horrorscopes/Aquarius'    => 'horoscopes#Aquarius'
   get '/horrorscopes/Pisces'      => 'horoscopes#Pisces'
 
+  get '/horrorscopes/api'         => 'horoscopes#api'
+
   post '/emails/add'              => 'emails#add'
 
   get '/movies/'                  => 'movies#index'
