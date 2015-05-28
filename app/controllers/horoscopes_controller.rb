@@ -5,7 +5,7 @@ class HoroscopesController < ApplicationController
   def index
     generateHoroscopes if Horoscope.all.empty?
     @horoscope = Horoscope.find_by zodiac:'Aries'
-    @movie = Movie.where(:theme => @horoscope.theme).sample
+    @movie = Movie.where(:theme => @horoscope.theme).sample || {imdb: "http://www.imdb.com/title/tt0339840/", poster: "http://ia.media-imdb.com/images/M/MV5BOTIyMjAyOTc1M15BMl5BanBnXkFtZTcwMjMxNTMzMQ@@._V1_SY317_CR5,0,214,317_AL_.jpg"}
   end
 
   def Aries
