@@ -1,7 +1,11 @@
 @import "bourbon";
+@import url(http://fonts.googleapis.com/css?family=Creepster);
+@import url(http://fonts.googleapis.com/css?family=Butcherman);
+@import url(http://fonts.googleapis.com/css?family=Alegreya);
 
-$cursive: cursive;
-$sans: sans-serif;
+$butcher: 'Butcherman', cursive;
+$cursive: 'Creepster', cursive;
+$serif: 'Alegreya', serif;
 $primary-color: #BE44FD;
 $font-color: #443266;
 $light-font-color: #CCCCCC;
@@ -11,27 +15,10 @@ $tablet: 830px;
 $mobile: 600px;
 
 
-
-/*@media (max-width: 600px) {
-  .facet_sidebar {
-    display: none;
-  }
-}
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-
-
-.box { @include border-radius(10px); }*/
-
 * {
   margin: 0;
   padding: 0;
-  font-family: $sans;
+  font-family: $serif;
 }
 
 @import "helpers";
