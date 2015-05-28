@@ -64,17 +64,33 @@ module CopyLib
           Witches: [
             "You probably should have cleaned up the inconsipicuous pile of sticks you found at your doorstep yesterday. Turns out a coven of witches decided to use your family as human sacrifices for their nefarious magic. The binding spell will complete and you will be unable to escape or do anything other than watch as your home burns to ashes around you."
             ],
-          Aliens: ["Aliens."],
-          Poltergeist: ["Poltergeist."],
-          Shades: ["Shades."],
+          Aliens: [
+            "You will have a moderately satisfying dinner at home tonight, the signs currently point to meatloaf. Right around 8.30pm you will start to feel light-headed and black out. You will fuzzily awaken outside, staring up at a silver disc. The feeling of weightlessness will overtake you as you float upwards in a blue light. The final words you hear before you faint are spoken in an unearthly accent, 'prepare the probing device...'"
+            ],
+          Poltergeist: [
+            "Sadly, you will discover that the 'pranks' your children have been playing, moving things around the house and slamming doors and windows will continue despite their abscence at school camp. The poltergeist haunting your house will grow bored of these games and start playing with the kitchen knives..."
+            ],
+          Shades: [
+            "You will discover later today, while reading your Sony iKobindle-reader in bed, that your house was the site of a massacre some years ago. This chilling discovery will be followed almost immediately by the revelation that angry ghosts care nothing for your #{self.characteristic} as they rise throught the floor of your bedroom and strangle you with the sheets."
+            ],
           Undead: [
             "By the end of the day your #{self.characteristic} will become secondary to the hell unleashed on earth as the dead rise from their graves and slaughter the innocent in their beds. The living dead will enter your home and rip your family to shreds, before feeding on their flesh."
             ],
-          Monsters: ["Monsters."],
-          Psychopath: ["Psychopath."],
-          Parasite: ["Parasite."],
-          Plague: ["Plague."],
-          Insects: ["Insects."]
+          Monsters: [
+            "You are not an easily worried or nervous person and have never believed in ghosts or monsters under the bed. Which is sensible as monsters don't live under the bed. Rather, they hide in the shadows and lurk unseen just around the corners of your vision. Later on today, monsters of unimaginable evil and malice will finally reveal themselves to humanity, slaughtering most and enslaving the rest."
+            ],
+          Psychopath: [
+            "The Murder House tour you attend later today is a fairly bland and predictable: the House of the Balaclava Butcher, the House of the Toorak Torturer, the House of the Ill-Informed Doomsday Cult... All well recognised places. The last stop will be a very modern, lavishly adorned apartment so new you can smell the paint. You will curiously ask, “who was murdered here?” right before the screams start."
+            ],
+          Parasite: [
+            "In good news, the itchy red spot on your upper inner thigh will turn out not to be what you were worried about. In not-so-good news, it will instead turn out to be a disgusting parasite that has wormed inside your body and is eating you from the inside out. Paralysis will set in and you will be unable to move, but you will feel everything."
+            ],
+          Plague: [
+            "Your tendency to ignore problems until they grow significant will bite you on the arse today. Quite literally, one of the rats part of the growing infestation in your house will bite your arse tonight. Tragically, this will herald the return of the bubonic plague and you will go down in history as patient zero, of the event that begun the decline of humanity."
+            ],
+          Insects: [
+            "Your #{self.characteristic} probably doesn't matter as much as your decision making ability. More specifically, your decision to live between an active nuclear power plant and an arachnid silk farm turns out to have been questionable. As giant mutant spiders burst through your windows later tonight and pounce on your family, poisoning and sucking their bodies dry, you will consider if the other side of town mightn't have been so bad."
+            ]
         },
         nonseq: [
           " Try learning self defence, or write a letter to a loved one you haven't spoken to for a while.",
@@ -119,26 +135,6 @@ module CopyLib
         ]
       }
     }
-  end
-
-  def getSearches
-    [
-      ['zombie','zombies'],
-      ['werewolf','werewolves','lycanthrope'],
-      ['vampire','vampires','nosferatu'],
-      ['demon','demons','demonspawn'],
-      ['witch','witches','coven'],
-      ['alien','aliens'],
-      ['poltergeist','ghost','ghosts'],
-      ['shade','shades','spirits'],
-      ['undead','living dead','skeletons'],
-      ['monster','monsters'],
-      ['serial killer','serial killers','murderer'],
-      ['serial killer','murderer','psycho','psychopath','torture'],
-      ['parasite','parasites'],
-      ['plauge','pestilence','disease'],
-      ['insect','insects','bug','bugs','spider','spiders','ant','ants','locusts','beetle','beetles','cockroach','cockroaches']
-    ]
   end
 
 end
