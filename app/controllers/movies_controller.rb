@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
       new_movie.imdb = "http://www.imdb.com/title/#{@omdb_data['imdbID']}"
       new_movie.poster = @omdb_data["Poster"]
       
-      if @omdb_data["Poster"] = "N/A"
+      if @omdb_data["Poster"] == "N/A"
         render :json => "No poster".to_json and return
       end
 
