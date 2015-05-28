@@ -57,7 +57,7 @@
     <p class="toggle-first-time">Get custom horrorscopes to your email</p>
   </div>
   <div class="poster">
-    <a href="<%= @movie.imdb %>" target="_blank"><%= image_tag("#{@movie.poster}") %></a>
+    <a href="<%= @movie.imdb || '#' %>" target="_blank"><%= image_tag("#{@movie.poster || '#' }") %></a>
     <p>See the <%= JSON.parse(@horoscope.nouns).sample %> in action</p>
   </div>
   <div class="product">
