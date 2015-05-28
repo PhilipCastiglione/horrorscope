@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
       new_movie.poster = @omdb_data["Poster"]
       
       if @omdb_data["Poster"] = "N/A"
-        render :json => "No poster".to_json
+        render :json => "No poster".to_json and return
       end
 
       unless @omdb_data["Response"] != "False" && new_movie.save
@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
       end
 
       movie = Movie.where(:title => cleaned_title)
-      render :json => movie.to_json
+      render :json => movie.to_json and return
     end
     render :json => "Already have it".to_json
   end
