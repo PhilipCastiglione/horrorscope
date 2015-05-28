@@ -6,10 +6,10 @@
   <body>
     <h1><%#= image_tag attachments["#{@recipient.sign}.svg"].url %>Welcome to Horrorscope</h1>
     <p>
-      Your email address <%= @recipient.address %> has been signed up to receive your daily horrorscope.<br>
+      Your email address <%= @recipient.address %> has been signed up to receive daily horrorscopes.<br>
     </p>
     <p>
-      You'll get the daily <%= @recipient.sign %> horrorscope, but head to <%= @url %> to check out what everyone else has to look forward to.
+      You'll get the <%= @recipient.sign %> horrorscope, but head to <%= @url %> to check out what the other eleven-twelfths of humanity else has to look forward to. Hint: it's not going to be good.
     </p>
     <p>Thanks for joining and have a great day! Try not to get eaten in your sleep by a giant rabid sloth!</p>
   </body>
