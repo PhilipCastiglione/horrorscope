@@ -3,6 +3,7 @@ include Generator
 class HoroscopesController < ApplicationController
 
   def index
+    puts 'got this far'
     generateHoroscopes if Horoscope.all.empty?
     @horoscope = Horoscope.find_by zodiac:'Aries'
     @movie = Movie.where(:theme => @horoscope.theme).sample

@@ -67,7 +67,8 @@ $(window).load(function(){
     localStorage.setItem('visitCount', '1')
   } else {
     // if we are on the splash page and there is a default, go there
-    if (window.location.href === "http://localhost:3000/" &&
+    if ((window.location.href === "http://localhost:3000/" ||
+          window.location.href === "https://horrify.herokuapp.com/") &&
         localStorage.getItem('defaultZodiac')) {
       window.location.href = '/horrorscopes/' + localStorage.getItem('defaultZodiac');
     }
