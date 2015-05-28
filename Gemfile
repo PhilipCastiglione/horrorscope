@@ -30,8 +30,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+
 # Use 12factor for heroku logs
 gem 'rails_12factor', group: :production
+
+# Use Figaro for ENV variables
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
