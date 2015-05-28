@@ -1,0 +1,40 @@
+require 'uri'
+include CopyLib
+
+class MoviesController < ApplicationController
+
+  def index
+    @themes = getNouns.keys
+  end
+
+  def omdb_search
+    url = "http://www.omdbapi.com/?s=#{params[:search]}"
+    movies_data = HTTParty.get(URI.escape(url))
+    render :json => movies_data.to_json
+  end
+
+  def omdb_title
+    cleaned_title = params[:title].gsub("'","&#39;")
+    movie = Movie.where(:title => cleaned_title)
+    if movie.empty?
+
+      url = "http://www.omdbapi.com/?t=#{params[:title]}"
+      @omdb_data = HTTParty.get(URI.escape(url))
+
+      new_movie = Movie.new
+      new_movie.title = cleaned_title
+      new_movie.theme = params[:theme]
+      new_movie.imdb = "http://www.imdb.com/title/#{@omdb_data['imdbID']}"
+      new_movie.poster = @omdb_data["Poster"]
+
+      unless @omdb_data["Response"] != "False" && new_movie.save
+        # throw error
+        puts 'error in movies#title when attempting to save'
+      end
+
+      movie = Movie.where(:title => cleaned_title)
+    end
+    render :json => movie.to_json
+  end
+
+end

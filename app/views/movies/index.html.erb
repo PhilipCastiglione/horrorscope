@@ -1,0 +1,18 @@
+<div id="omdb">
+  <div id="omdb-inner">
+    <h1>Add movies to database</h1>
+    <p>
+      Theme: 
+      <select id="theme">
+        <% @themes.each do |theme| %>
+          <option value='<%= theme %>'><%= theme %></option>
+        <% end %>
+      </select>
+    </p>
+    <p>
+      Search string:
+      <input id="search" type="text">
+    </p>
+    <button id="init-omdb">Execute</button>
+  </div>
+</div>

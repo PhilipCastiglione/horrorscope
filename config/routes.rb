@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   get '/horrorscopes/Aquarius'    => 'horoscopes#Aquarius'
   get '/horrorscopes/Pisces'      => 'horoscopes#Pisces'
 
-  get '/apis/movies/search'       => 'apis#movies_search'
-  get '/apis/movies/title'        => 'apis#movies_title'
-
   post '/emails/add'              => 'emails#add'
 
+  get '/movies/'                  => 'movies#index'
+  post '/movies/search'           => 'movies#omdb_search'
+  post '/movies/title'            => 'movies#omdb_title'
 
 end

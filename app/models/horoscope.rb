@@ -2,6 +2,8 @@ include CopyLib
 
 class Horoscope < ActiveRecord::Base
 
+    validates :zodiac, uniqueness: true
+
   def generate(zodiac)
 
     self.zodiac = zodiac
