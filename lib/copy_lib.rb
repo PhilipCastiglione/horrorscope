@@ -26,26 +26,40 @@ module CopyLib
           "It will be an interesting day for you, breaking the mould of the last few dreary weeks of your boring life.",
           "You might regret forgetting your lucky coin this morning.",
           "You will soon forget the tragic loss of your naval fluff collection last week.",
-          "Your insatiable appetite for custard will finally cease to harm those around you"
+          "Your insatiable appetite for custard will finally cease to harm those around you.",
+          "You can turn a minor success into a major triumph today! Or a small mistake into a gigantic screw-up!",
+          "A change in your social or professional standing, or relationship status, or the weather, is possible but not guaranteed today.",
+          "It's time to learn from the big picture, but make sure you do not forget to pay attention to the details.",
+          "Some things that appear complex are simple and vice versa. Further more, some things are as they seem.",
+          "Don’t try to hide your feelings today because others will see right through you. Frankly, you're transparent. It's embarrassing."
         ],  
         astral: {
           good: [
             " Mercury is currently backwards in your fifth House. It is literally certain that if you purchase a lottery ticket today, you will win at least the major jackpot.",
-            " Jupiter spins on its axis for you right now! Now is the perfect time to cook your favourite soup!"
+            " Jupiter spins on its axis for you right now! Now is the perfect time to cook your favourite soup!",
+            " There will be a pleasing alignment between Jupiter, the largest of the planets, and Uranus.",
+            " Given the imminent influence of the great Solar Eclipse you have every reason to be hopeful.",
+            " Astrological tradition tells us that the way out from an intense alignment is always speedier than the time it took to start coming under its spell."
           ],
           bad: [
             " It's probable that the impact of saturn's diurnal orb moving into jupiter's sphere of influence will upset the balance of nature. No promises though.",
-            " The current astral configuration is disturbing latent evil forces."
+            " The current astral configuration is disturbing latent evil forces.",
+            " A number of shocking events can be linked to a series of seven antagonistic alignments between Uranus and Pluto.",
+            " When slow-moving heavenly bodies form right angles to one another across the zodiac, the impact can last years. This represent a clash between two heavenly archetypes of sudden awareness and deep, dark hidden power..."
           ]
         },
         sign: {
           good: [
-            ["Ordinarily, this would make you transcendentally happy for the whole week! Er, bit of a catch today though.", 'mood'],
-            ["Your natural charm will be enhanced by all the good vibes, look out world!", 'charm']
+            ["Ordinarily, as a traditional #{self.zodiac} this would make you transcendentally happy for the whole week! Er, bit of a catch today though.", 'mood'],
+            ["Your natural #{self.zodiac} charm will be enhanced by all the good vibes, look out world!", 'charm'],
+            ["Once again #{self.zodiac}, your excellent good looks will once again occupy your attention as you walk past mirrors and other shiny surfaces today",'appearance'],
+            ["Ordinarily #{self.zodiac}, you might rely on your charmisma and winning personality to get you through any tough situations you encounter. That might not be enough this time.", "charm"]
           ],
           bad: [
             ["This will have a dark impact on your emotional state and send you into a stubborn mood fit for a true #{self.zodiac}. It is up to you to decide how to deal with this. I'm not your mum, I can't tell you what to do.", 'mood'],
-            ["Ordinarily, you might rely on your charmisma and winning personality to get you through any tough situations you encounter.", "charm"]
+            ["Sorry #{self.zodiac}, but your hidous visage will continue to frighten children away as you walk past playgrounds and parks.",'appearance'],
+            ["#{self.zodiac}, your secret addiction to sniffing fast food refuse out behind the dumpsters at KFC will be outed, but this will be the least of your worries.",'addiction']
+            ["So, #{self.zodiac}, you've been a bit full of yourself recently. Well you might not be so high and mighty soon",'ego']
           ]
         },
         horror: {
@@ -94,7 +108,14 @@ module CopyLib
         },
         nonseq: [
           " Try learning self defence, or write a letter to a loved one you haven't spoken to for a while.",
-          " As a typical #{self.zodiac}, you're vulnerable to stress in a situation like this. Maybe take up yoga or buy some relaxing tea."
+          " As a typical #{self.zodiac}, you're vulnerable to stress in a situation like this. Maybe take up yoga or buy some relaxing tea.",
+          " Perhaps eat a few oranges to up your vitamin C intake.",
+          " Consider investing in a larger life insurance policy.",
+          " As the archetypal #{self.zodiac}, you don't deal well with situations like this. Try pretending to be someone else for a while. Possibly forever.",
+          " Do everyone a favour and just go quietly.",
+          " I guess we will never find out if you'll live up to your potential after all. Personally I think it was unlikely.",
+          " Try standing straighter. Strong posture can lead to the confidence to better deal with situations like this.",
+          " When reason and your #{self.characteristic} are unable to get you through the situation, consider reverting to childhood and see if the foetal position is of any aid."
         ]
       },
       love: {
@@ -108,15 +129,17 @@ module CopyLib
         },
         comment: {
           good: [
-            " The medical-grade prescription strength deoderant you recently purchased is probably paying off here."
+            " The medical-grade prescription strength deoderant you recently purchased is probably paying off here.",
+            " Getting all those hideous warts lasered off your face was a good idea."
           ],
           bad: [
-            " Things could be worse! It's not really clear how exactly."
+            " Things could be worse! Though to be honest it's not really clear exactly how.",
+            " Let's face it, you've never really been lucky in love."
           ]
         },
         horror: {
           good: [
-            " The nervous buzz and tingling stomach you feel when talking to your new admirer will be quickly replaced with overwhelming terror and an empty stomach as you see their freshly disemboweled corpse rotting on the side of the road."
+            " The nervous buzz and tingling stomach you feel when talking to your current or new admirer will be quickly replaced with overwhelming terror and an empty stomach as you see their freshly disemboweled corpse rotting on the side of the road."
           ],
           bad: [
             " On the plus side your love life won't be your biggest problem once the horde of #{JSON.parse(self.nouns||"[]").sample} rampage through town leaving everyone you've ever met just a distant memory."
@@ -131,7 +154,7 @@ module CopyLib
           " Luckily for you, the money wouldn't have been useful anyway since the #{JSON.parse(self.nouns||"[]").sample} prefer a barter-based economy."
         ],
         comment: [
-          " Also they killed all the bankers. Silver lining?"
+          " Also the #{JSON.parse(self.nouns||"[]").sample} killed all the bankers. Silver lining?"
         ]
       }
     }
