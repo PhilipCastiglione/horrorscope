@@ -14,13 +14,15 @@
     height: 42vh;
     width: 40vw;
     padding: 5vh 3vw;
-    background-color: white;
+    @include background-image(image-url("blood.jpg"));
     border-radius: 10%;
+    font-family: $sans;
 
     h1 {
       font-size: 10vh;
       line-height: 10vh;
       margin-bottom: 1vh;
+      font-family: $cursive;
     }
 
     p {
