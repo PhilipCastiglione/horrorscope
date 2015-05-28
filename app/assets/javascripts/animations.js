@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  console.log('wat');
   // transition horror background slide in
   $('body').addClass('horrify');
 

@@ -13,22 +13,30 @@
 <nav>
   <menu class="left">
     <ul>
-      <li><a href="/horrorscopes/Aries"><%= image_tag("zodiac_signs/detailed/Aries.svg") %></a></li>
-      <li><a href="/horrorscopes/Taurus"><%= image_tag("zodiac_signs/detailed/Taurus.svg") %></a></li>
-      <li><a href="/horrorscopes/Gemini"><%= image_tag("zodiac_signs/detailed/Gemini.svg") %></a></li>
-      <li><a href="/horrorscopes/Cancer"><%= image_tag("zodiac_signs/detailed/Cancer.svg") %></a></li>
-      <li><a href="/horrorscopes/Leo"><%= image_tag("zodiac_signs/detailed/Leo.svg") %></a></li>
-      <li><a href="/horrorscopes/Virgo"><%= image_tag("zodiac_signs/detailed/Virgo.svg") %></a></li>
+      <% ['Aries','Taurus','Gemini','Cancer','Leo','Virgo'].each do |sign| %>
+        <li><a href="/horrorscopes/<%=sign%>">
+        <% if sign == @horoscope.zodiac %>
+          <%= image_tag("zodiac_signs/detailed/#{sign}.svg", 'class' => 'selected') %>
+        <% else %>
+          <%= image_tag("zodiac_signs/detailed/#{sign}.svg", 'class' => 'option') %>
+        <% end%>
+          <h5 class="<%= sign %>"><%= sign %></h5>
+        </a></li>
+      <% end%>
     </ul>
   </menu>
   <menu class="right">
     <ul>
-      <li><a href="/horrorscopes/Libra"><%= image_tag("zodiac_signs/detailed/Libra.svg") %></a></li>
-      <li><a href="/horrorscopes/Scorpio"><%= image_tag("zodiac_signs/detailed/Scorpio.svg") %></a></li>
-      <li><a href="/horrorscopes/Sagittarius"><%= image_tag("zodiac_signs/detailed/Sagittarius.svg") %></a></li>
-      <li><a href="/horrorscopes/Capricorn"><%= image_tag("zodiac_signs/detailed/Capricorn.svg") %></a></li>
-      <li><a href="/horrorscopes/Aquarius"><%= image_tag("zodiac_signs/detailed/Aquarius.svg") %></a></li>
-      <li><a href="/horrorscopes/Pisces"><%= image_tag("zodiac_signs/detailed/Pisces.svg") %></a></li>
+      <% ['Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].each do |sign| %>
+        <li><a href="/horrorscopes/<%=sign%>">
+        <% if sign == @horoscope.zodiac %>
+          <%= image_tag("zodiac_signs/detailed/#{sign}.svg", 'class' => 'selected') %>
+        <% else %>
+          <%= image_tag("zodiac_signs/detailed/#{sign}.svg", 'class' => 'option') %>
+        <% end%>
+          <h5 class="<%= sign %>"><%= sign %></h5>
+        </a></li>
+      <% end%>
     </ul>
   </menu>
 </nav>
