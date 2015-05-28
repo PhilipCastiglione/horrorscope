@@ -1,3 +1,13 @@
+<div id="first-time" class="cover">
+  <div class="inner">
+    <h1>Welcome</h1>
+    <p><input type="text" id="first-time-name" placeholder="name"></p>
+    <p>birth date: <input type="number" id="first-time-days" placeholder="DD"><input type="number" id="first-time-months" placeholder="MM"></p>
+    <p><input type="email" id="first-time-email" placeholder="email@address.com"></p>
+    <p><button id="submit-first-time">submit</button>
+    <button class="toggle-first-time">skip</button></p>
+  </div>
+</div>
 <nav>
   <menu class="left">
     <ul>
@@ -43,6 +53,9 @@
   </section>
 </main>
 <section id='sidebar'>
+  <div id="first-time-reaccess">
+    <p class="toggle-first-time">Get custom horrorscopes to your email</p>
+  </div>
   <div class="poster">
     <a href="<%= @movie.imdb %>" target="_blank"><%= image_tag("#{@movie.poster}") %></a>
     <p>See the <%= JSON.parse(@horoscope.nouns).sample %> in action</p>

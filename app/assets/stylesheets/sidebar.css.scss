@@ -6,6 +6,13 @@ section#sidebar {
   margin-left: 2vw;
   color: $font-color;
 
+  #first-time-reaccess {
+    p {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
   .poster, .product {
     margin-top: 10vh;
 
