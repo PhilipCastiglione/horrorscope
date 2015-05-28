@@ -15,7 +15,7 @@ module CopyLib
       Psychopath: ['serial killer','murderer','the torturer','the psychopath'],
       Parasite: ['parasites'],
       Plague: ['plaguebringers','pestilent fiends'],
-      Insects: ['giant spiders','swarm of locusts']
+      Insects: ['giant spiders','swarm of spiders']
     }
   end
 

@@ -5,11 +5,13 @@ section#sidebar {
   width: 17vw;
   margin-left: 2vw;
   color: $font-color;
+  font-family: $sans;
 
   #first-time-reaccess {
     p {
       cursor: pointer;
       text-decoration: underline;
+      color: $light-font-color;
     }
   }
 

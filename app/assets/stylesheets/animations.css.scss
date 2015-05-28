@@ -4,6 +4,15 @@ body {
   @include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 10%, #EE74FF 35%, #DE64FF 65%, #BE44FD 90%, #8A0707 100%));
 }
 
+#starry-wrapper {
+  @include background-image(image-url("starry-night-1.png"));
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.2;
+  z-index: -1;
+}
+
 .horrify {
   @include animation-duration(2s);
   @include animation-name(horrify);
@@ -53,12 +62,22 @@ body {
   to {@include background-image(linear-gradient(90deg, #8A0707 0%, #BE44FD 10%, #EE74FF 35%, #DE64FF 65%, #BE44FD 90%, #8A0707 100%));}
 }
 
-.fadein {
+.fade-in-slow {
   @include animation-duration(10s);
-  @include animation-name(fadein);
+  @include animation-name(fade-in-slow);
 }
 
-@include keyframes(fadein) {
+@include keyframes(fade-in-slow) {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+.fade-in-fast {
+  @include animation-duration(3s);
+  @include animation-name(fade-in-fast);
+}
+
+@include keyframes(fade-in-fast) {
+  from {opacity: 0;}
+  to {opacity: .2;}
 }
