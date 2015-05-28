@@ -6,6 +6,28 @@ $primary-color: #BE44FD;
 $font-color: #443266;
 $light-font-color: #CCCCCC;
 
+$desktop: 1000px;
+$tablet: 830px;
+$mobile: 600px;
+
+
+
+/*@media (max-width: 600px) {
+  .facet_sidebar {
+    display: none;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+.box { @include border-radius(10px); }*/
+
 * {
   margin: 0;
   padding: 0;

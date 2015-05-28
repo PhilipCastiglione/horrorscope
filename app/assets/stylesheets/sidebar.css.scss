@@ -2,12 +2,18 @@
 section#sidebar {
   display: inline-block;
   vertical-align: top;
-  width: 17vw;
+  width: 17vw;  
   margin-left: 2vw;
   color: $font-color;
   font-family: $sans;
 
+  @media (max-width: $mobile) {
+    width: 95vw;
+  }
+
   #first-time-reaccess {
+    margin-top: 2vh;
+
     p {
       cursor: pointer;
       text-decoration: underline;
@@ -16,7 +22,7 @@ section#sidebar {
   }
 
   .poster, .product {
-    margin-top: 10vh;
+    margin-top: 8vh;
 
     img {
       width: 17vw;
@@ -24,6 +30,24 @@ section#sidebar {
 
     p {
       text-align: center;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .poster {
+      margin-top: 2vh;
+      img {
+        width: 45vw;
+      }
+      float: left;
+    }
+
+    .product {
+      margin-top: 2vh;
+      img {
+        width: 45vw;
+      }
+      float: right;
     }
   }
 

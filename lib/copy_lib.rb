@@ -58,7 +58,7 @@ module CopyLib
           bad: [
             ["This will have a dark impact on your emotional state and send you into a stubborn mood fit for a true #{self.zodiac}. It is up to you to decide how to deal with this. I'm not your mum, I can't tell you what to do.", 'mood'],
             ["Sorry #{self.zodiac}, but your hidous visage will continue to frighten children away as you walk past playgrounds and parks.",'appearance'],
-            ["#{self.zodiac}, your secret addiction to sniffing fast food refuse out behind the dumpsters at KFC will be outed, but this will be the least of your worries.",'addiction']
+            ["#{self.zodiac}, your secret addiction to sniffing fast food refuse out behind the dumpsters at KFC will be outed, but this will be the least of your worries.",'addiction'],
             ["So, #{self.zodiac}, you've been a bit full of yourself recently. Well you might not be so high and mighty soon",'ego']
           ]
         },

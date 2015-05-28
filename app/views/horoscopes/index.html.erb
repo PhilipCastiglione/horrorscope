@@ -71,12 +71,18 @@
     <p>See the <%= JSON.parse(@horoscope.nouns).sample %> in action</p>
   </div>
   <div class="product">
-    <% prod_link = ["https://m1.behance.net/rendition/modules/41270789/disp/720ad900749076a1ec68fc1cbff22943.jpg","https://s-media-cache-ak0.pinimg.com/236x/fe/0b/12/fe0b12f9b944bd8fb737429ccc16dc92.jpg","http://gizmodiva.com/wp-content/uploads/2013/08/organic-furniture-1.jpg","https://s-media-cache-ak0.pinimg.com/236x/00/1d/78/001d787a73dd11ac6fafff027bea7b6e.jpg","http://411buyitnow.com/media/catalog/category/home_furniture_accessories.jpg"].sample %>
+    <% prod_link = ["https://m1.behance.net/rendition/modules/41270789/disp/720ad900749076a1ec68fc1cbff22943.jpg","https://s-media-cache-ak0.pinimg.com/236x/fe/0b/12/fe0b12f9b944bd8fb737429ccc16dc92.jpg","http://gizmodiva.com/wp-content/uploads/2013/08/organic-furniture-1.jpg","https://s-media-cache-ak0.pinimg.com/236x/00/1d/78/001d787a73dd11ac6fafff027bea7b6e.jpg"].sample %>
     <%= image_tag(prod_link) %>
     <p>Cool stuff</p>
   </div>
 </section>
 <footer>
-  &copy; Copyright Philip Castiglione 2015.<br>
-  Thieves handed over to the <%= JSON.parse(@horoscope.nouns).sample %>. It won't be pretty.
+  <div class="left">
+    &copy; Copyright Philip Castiglione 2015.<br>
+    Thieves handed over to the <%= JSON.parse(@horoscope.nouns).sample %>. It won't be pretty.
+  </div>
+  <div class="right">
+    Yes, this site is styled like it's still the 90's.<br>
+    We've got horoscopes and cheesy horror here, what did you expect!?
+  </div>
 </footer>
