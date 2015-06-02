@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   get '/movies/'                  => 'movies#index'
   post '/movies/search'           => 'movies#omdb_search'
   post '/movies/title'            => 'movies#omdb_title'
+  post '/movies/imdb'             => 'movies#omdb_to_imdb'
 
 end

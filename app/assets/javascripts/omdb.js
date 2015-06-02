@@ -30,6 +30,15 @@ $(document).ready(function(){
     postSearch(searchStr, theme, postTitle);
   };
 
+  var imdbScript = function() {
+    $.ajax({
+      url: '/movies/imdb',
+      method: 'POST',
+      dataType: 'json'
+    });
+  };
+
   $('#init-omdb').on('click', omdbScript);
+  $('#init-imdb').on('click', imdbScript);
 
 });

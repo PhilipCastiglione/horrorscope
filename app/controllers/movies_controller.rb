@@ -1,5 +1,6 @@
 require 'uri'
 include CopyLib
+include ImdbPoster
 
 class MoviesController < ApplicationController
 
@@ -41,6 +42,15 @@ class MoviesController < ApplicationController
       render :json => movie.to_json and return
     end
     render :json => "Already have it".to_json
+  end
+
+  def omdb_to_imdb
+    movies = Movie.all
+    movies.each do |movie|
+      movie.poster = getImdbPoster(movie.imdb)
+      movie.save
+    end
+    render :json => "converted to imdb".to_json
   end
 
 end

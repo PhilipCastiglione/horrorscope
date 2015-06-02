@@ -45,6 +45,9 @@ gem 'figaro'
 # Use HTTParty for external API access
 gem 'httparty'
 
+# Use Nokogiri for making my own API :}
+gem 'nokogiri'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
