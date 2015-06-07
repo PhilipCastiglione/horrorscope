@@ -19,7 +19,7 @@ var setDefaultZodiac = function(days, months) {
   } else {serialZodiac = 'date error in setDefaultZodiac';
   }
 
-  localStorage.setItem('defaultZodiac', serialZodiac);
+  return serialZodiac;
 };
 
 var pushEmail = function(address, sign) {
@@ -43,13 +43,13 @@ var submitFirstTime = function() {
   var email = $('#first-time-email').val();
   // if date values expected (not handling 31st Feb edge cases because yolo)
   if (days >= 1 && days <= 31 && months >= 1 && months <= 12) {
-    setDefaultZodiac(days, months);
+    localStorage.setItem('defaultZodiac', setDefaultZodiac(days, months));
   }
   // add name if given
   if (name) {
     localStorage.setItem('name', name);
   }
-  // if it looks and smells like an email address
+  // if it looks and smells like an email address...
   if (email.match(/@/)) {
     pushEmail(email, localStorage.getItem('defaultZodiac'));
   }
@@ -57,12 +57,13 @@ var submitFirstTime = function() {
   window.location.href = '/horrorscopes/' + localStorage.getItem('defaultZodiac');
 };
 
-$(window).load(function(){
+$(window).load(function() {
 
   // check if first time visitor
   if (!localStorage.getItem('visitCount')) {
-    // set default default...
+    // set default to Aries
     localStorage.setItem('defaultZodiac', 'Aries');
+    // show modal
     toggleFirstTime();
     localStorage.setItem('visitCount', '1')
   } else {
