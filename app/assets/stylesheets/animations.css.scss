@@ -5,7 +5,7 @@ body {
 }
 
 #starry-wrapper {
-  @include background-image(image-url("starry-night-1.png"));
+  @include background-image(image-url("starry-night.png"));
   position: fixed;
   height: 100vh;
   width: 100vw;
